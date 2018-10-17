@@ -1,6 +1,6 @@
-#
+# Certified Kubernetes Administrator (CKA) kata
 
-as far as 04-24-2018 was on ubuntu *16*
+As far as 04-24-2018 was on ubuntu *16*
 and tips said *1.11.1* [pdf](https://www.cncf.io/certification/tips)
 
 ## Requirements
