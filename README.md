@@ -6,8 +6,8 @@ As far as 04-24-2018 was on ubuntu *16* and the tips document
 says *1.11.1* [pdf](https://www.cncf.io/certification/tips)
 
 - Some info on the exam with links: [containers/orchestration/k8s/certifications/00-preparation.article](https://go-talks.appspot.com/github.com/jecnua/notes-presentations/notes/containers/orchestration/k8s/certifications/00-preparation.article)
-- Where I will copy my notes while studying: [containers/orchestration/k8s/certifications/02-questions.article](https://go-talks.appspot.com/github.com/jecnua/notes-presentations/notes/containers/orchestration/k8s/certifications/02-questions.article)
-- Questions: [containers/orchestration/k8s/certifications/03-kata.article](https://go-talks.appspot.com/github.com/jecnua/notes-presentations/notes/containers/orchestration/k8s/certifications/04-kata.article)
+- Where I will copy my notes while studying: [containers/orchestration/k8s/certifications/01-cka.article](https://go-talks.appspot.com/github.com/jecnua/notes-presentations/notes/containers/orchestration/k8s/certifications/01-cka.article)
+- Questions: [containers/orchestration/k8s/certifications/02-questions.article](https://go-talks.appspot.com/github.com/jecnua/notes-presentations/notes/containers/orchestration/k8s/certifications/02-questions.article)
 - Where I will put the scenarios you can use this repo for: [containers/orchestration/k8s/certifications/03-kata.article](https://go-talks.appspot.com/github.com/jecnua/notes-presentations/notes/containers/orchestration/k8s/certifications/01-kata.article)
 
 ## Requirements
