@@ -2,6 +2,9 @@
 
 -   [kelseyhightower/kubernetes-the-hard-way](https://github.com/kelseyhightower/kubernetes-the-hard-way)
 
+In a bare machine, install all the tools needed to generate SSL and create
+all the CA we need to install kubernetes.
+
 ## Setup
 
     vagrant up
@@ -16,14 +19,6 @@ Install:
 
 -   cfssl
 -   cfssljson
-
-Q: Only on the master or also the nodes?
-
-## Step 2) Install kubectl and autocomplete
-
-Install:
-
--   kubectl
 
 Q: Only on the master or also the nodes?
 
@@ -43,6 +38,40 @@ TLS certificates for the following components:
 -   kube-proxy
 
 READ: <https://jvns.ca/blog/2017/08/05/how-kubernetes-certificates-work/>
+
+https://kubernetes.io/docs/tasks/administer-cluster/configure-upgrade-etcd/#securing-etcd-clusters
+
+    etcd --listen-client-urls=http://127.0.0.1:2379 --advertise-client-urls=http://127.0.0.1:2379 &
+    vagrant@bare:~/cert$ sudo ETCDCTL_API=3 etcdctl member list                                           
+    8e9e05c52164694d, started, default, http://localhost:2380, http://127.0.0.1:2379
+
+POINT 1:
+
+If you are running etcd in single node without certs, change it on the config too
+to use http not https
+
+POINT 2:
+
+$ curl --cacert ca.pem https://127.0.0.1:6443/version
+{
+  "major": "1",
+  "minor": "12",
+  "gitVersion": "v1.12.0",
+  "gitCommit": "0ed33881dc4355495f623c6f22e7dd0b7632b7c0",
+  "gitTreeState": "clean",
+  "buildDate": "2018-09-27T16:55:41Z",
+  "goVersion": "go1.10.4",
+  "compiler": "gc",
+  "platform": "linux/amd64"
+}
+
+## Step 2) Install kubectl and autocomplete
+
+Install:
+
+-   kubectl
+
+Q: Only on the master or also the nodes?
 
 ### Note
 
