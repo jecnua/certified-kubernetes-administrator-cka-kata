@@ -1,0 +1,40 @@
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: second
+  name: second
+  namespace: default
+spec:
+  replicas: 20
+  selector:
+    matchLabels:
+      app: nginx
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - image: nginx:alpine
+        imagePullPolicy: IfNotPresent
+        name: nginx
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      tolerations:
+      - key: "env"
+        operator: "Exists"
+        effect: "NoSchedule"
