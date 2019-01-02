@@ -36,6 +36,17 @@ NOTE: Leave the pod running.
 
 - [Solution](03/solution.md)
 
+### 04) Equality and set based selection
+
+Apply the pod.yaml in this directory.
+
+- Get all the pods of team green
+- Get all labels where the team IS NOT green and env is qa
+- Get all pods with label env
+- Get all pods that ARE NOT in qa (but label exists)
+
+- [Solution](04/solution.md)
+
 ## Cleanup
 
-Delete the pod
+Delete all the pod

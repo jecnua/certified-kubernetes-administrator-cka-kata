@@ -1,0 +1,83 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    env: prod
+    team: red
+  name: nginx-01
+spec:
+  containers:
+  - image: nginx:alpine
+    name: nginx
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    env: prod
+    team: green
+  name: nginx-02
+spec:
+  containers:
+  - image: nginx:alpine
+    name: nginx
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    env: qa
+    team: green
+  name: nginx-03
+spec:
+  containers:
+  - image: nginx:alpine
+    name: nginx
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    env: qa
+    team: blue
+  name: nginx-04
+spec:
+  containers:
+  - image: nginx:alpine
+    name: nginx
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    team: blue
+  name: nginx-05
+spec:
+  containers:
+  - image: nginx:alpine
+    name: nginx
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
