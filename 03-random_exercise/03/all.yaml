@@ -1,0 +1,65 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: testvolume
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/mnt/"
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: myclaim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: manual # this needs to be here
+  selector:
+    matchLabels:
+      type: "local"
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  creationTimestamp: null
+  labels:
+    app: test
+  name: test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: test
+    spec:
+      volumes:
+      - name: test
+        persistentVolumeClaim:
+          claimName: myclaim
+      containers:
+      - image: busybox
+        name: busybox
+        resources: {}
+        command: ["/bin/sh","-c"]
+        args: ["touch /mnt/test && ls -la /mnt/"]
+        volumeMounts:
+        - name: test
+          mountPath: "/mnt/"
+          readOnly: false
+status: {}

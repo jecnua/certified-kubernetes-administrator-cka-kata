@@ -10,6 +10,13 @@ says *1.11.1* [pdf](https://www.cncf.io/certification/tips)
 - Questions: [containers/orchestration/k8s/certifications/02-questions.article](https://go-talks.appspot.com/github.com/jecnua/notes-presentations/notes/containers/orchestration/k8s/certifications/02-questions.article)
 - Where I will put the scenarios you can use this repo for: [containers/orchestration/k8s/certifications/03-kata.article](https://go-talks.appspot.com/github.com/jecnua/notes-presentations/notes/containers/orchestration/k8s/certifications/01-kata.article)
 
+## Steps
+
+- kubectl autocomplete
+- kubectl alias (k, kg, ka, kc)
+- clear alias
+- copy jsonpath on notepad
+
 ## Requirements
 
 - Vagrant
