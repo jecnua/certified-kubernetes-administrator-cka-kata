@@ -3,7 +3,7 @@ kind: Job
 metadata:
   name: test
 spec:
-  completions: 60
+  completions: 6
   parallelism: 2
   template:
     spec:
